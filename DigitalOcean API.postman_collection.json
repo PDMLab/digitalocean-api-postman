@@ -41,7 +41,41 @@
 		{
 			"name": "Block Storage",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "List all Block Storage volumes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes?region={{region}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "region",
+									"value": "{{region}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
