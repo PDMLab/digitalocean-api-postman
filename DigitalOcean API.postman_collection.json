@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "9e9a4edb-b90f-4577-90b1-67754cbaf12b",
+		"name": "DigitalOcean API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"description": null,
+			"item": [
+				{
+					"name": "Get User Information",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/account",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"account"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
