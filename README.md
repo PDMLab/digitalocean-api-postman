@@ -1,7 +1,7 @@
 # Postman API Collection and environment for DigitalOcean API v2
 
 ## Description
-This repository provides an [API Collection](DigitalOcean API.postman_collection.json) as well as an [Postman Environment configuration](DigitalOcean.postman_environment.json) for the DigitalOcean API v2.
+This repository provides an [API Collection](DigitalOcean%20API.postman_collection.json) as well as an [Postman Environment configuration](DigitalOcean.postman_environment.json) for the DigitalOcean API v2.
 
 ## Usage
 * Import the `DigitalOcean.postman_environment.json` into Postman first and make sure to set the values of the following environment variables in the Postman settings for the `DigitalOcean` environment:
