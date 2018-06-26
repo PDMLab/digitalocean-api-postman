@@ -248,6 +248,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete a Block Storage volume snapshot",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/snapshots/{{snapshot_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"snapshots",
+								"{{snapshot_id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
