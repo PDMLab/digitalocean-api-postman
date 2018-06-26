@@ -304,6 +304,43 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete a Block Storage volume by name",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes?name={{volume_name}}&region={{region}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{volume_name}}"
+								},
+								{
+									"key": "region",
+									"value": "{{region}}"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
