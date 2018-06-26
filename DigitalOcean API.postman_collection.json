@@ -212,6 +212,42 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Create snapshot from a volume",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"{{snapshot_name}}\"\n}"
+						},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}/snapshots",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}",
+								"snapshots"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
