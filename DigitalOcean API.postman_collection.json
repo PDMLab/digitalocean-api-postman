@@ -74,6 +74,40 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Create a new Block Storage volume",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"size_gigabytes\": 10,\n  \"name\": \"example\",\n  \"description\": \"Block store for examples\",\n  \"region\": \"nyc1\"\n}"
+						},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
