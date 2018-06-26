@@ -37,6 +37,312 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Block Storage",
+			"description": "",
+			"item": [
+				{
+					"name": "List all Block Storage volumes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes?region={{region}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "region",
+									"value": "{{region}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a new Block Storage volume",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"size_gigabytes\": 10,\n  \"name\": \"example\",\n  \"description\": \"Block store for examples\",\n  \"region\": \"nyc1\"\n}"
+						},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve an existing Block Storage volume",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve an existing Block Storage volume by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes?name={{volume_name}}&region={{region}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{volume_name}}"
+								},
+								{
+									"key": "region",
+									"value": "{{region}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List snapshots for a volume",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}/snapshots?page=1&per_page=1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}",
+								"snapshots"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create snapshot from a volume",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"{{snapshot_name}}\"\n}"
+						},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}/snapshots",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}",
+								"snapshots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Block Storage volume snapshot",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/snapshots/{{snapshot_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"snapshots",
+								"{{snapshot_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Block Storage volume",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Block Storage volume by name",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes?name={{volume_name}}&region={{region}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{volume_name}}"
+								},
+								{
+									"key": "region",
+									"value": "{{region}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
