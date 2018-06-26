@@ -108,6 +108,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Retrieve an existing Block Storage volume",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{bearer}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "https://api.digitalocean.com/v2/volumes/{{volume_id}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"digitalocean",
+								"com"
+							],
+							"path": [
+								"v2",
+								"volumes",
+								"{{volume_id}}"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
